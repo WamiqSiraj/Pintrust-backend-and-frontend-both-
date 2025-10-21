@@ -1,0 +1,362 @@
+/* Temel Stiller */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+             background-color: #575656;
+        }
+
+        /* Container */
+        .profile-container {
+            max-width: 900px;
+            margin: 2px auto;
+            background: #fcfcfc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: #1877f2;
+        }
+
+        /* Kapak Resmi */
+        .cover-photo {
+            position: relative;
+            height: 100px;
+            background: #ddd;
+            overflow: hidden;
+            background-color: #1877f2;
+        }
+
+        .cover-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .edit-cover {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .cover-photo:hover .edit-cover {
+            opacity: 1;
+        }
+
+        /* Profil Resmi */
+        .profile-picture {
+            position: relative;
+            text-align: center;
+            margin-top: -95px;
+            padding: 0px 20px;
+            
+        }
+
+        .profile-picture img {
+            width: 150px;
+            height: 150px;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        
+        }
+
+        .edit-profile {
+            position: absolute;
+            bottom: 10px;
+            right: calc(50% - 75px); /* Resmin merkezine hizalı */
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .profile-picture:hover .edit-profile {
+            opacity: 1;
+        }
+
+        /* Profil Bilgileri */
+        .profile-info {
+            padding: 15px 20px;
+            text-align: center;
+            background-color: #bcd9ff;
+            height: 140px;
+        }
+
+        .profile-info h1 {
+            font-size: 26px;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .profile-info p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
+
+        /* Düzenleme Formu */
+        .edit-form {
+            display: none;
+            padding: 20px;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+
+        .edit-form input,
+        .edit-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .edit-form button {
+            padding: 12px 25px;
+            background: #1877f2;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .edit-form button:hover {
+            background: #166fe5;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .profile-container {
+                margin: 10px;
+                border-radius: 0;
+            }
+
+            .cover-photo {
+                height: 100px;
+            }
+
+            .profile-picture {
+                margin-top: -60px;
+            }
+
+            .profile-picture img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .edit-profile {
+                right: calc(50% - 60px);
+            }
+
+            .profile-info h1 {
+                font-size: 22px;
+            }
+
+            .profile-info p {
+                font-size: 14px;
+            
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cover-photo {
+                height: 150px;
+            }
+
+            .profile-picture {
+                margin-top: -50px;
+            }
+
+            .profile-picture img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .edit-profile {
+                right: calc(50% - 50px);
+                padding: 6px;
+            }
+
+            .edit-cover {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+        }
+        
+.allcards{
+  /* background-color: #1877f2;*/
+    margin: 10px 50px;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    gap: 1%;
+    align-items: start;
+    background-color: #2c2c2c;
+}
+.allcards .card{
+   
+   display: flex;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 250px;
+    margin: 10px;
+}
+.allcards .card img{
+   border-radius: 7px;
+  
+   
+}
+.allcards .card .card-body {
+    display: flex;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    padding: 5px;
+    align-items:flex-start;
+    justify-content: center;
+    color: white;
+    padding: 10px ;
+}
+.card-body a{
+color: #f79f9f;
+display: flex;
+align-items: center;
+text-decoration: none;
+
+}
+#hiddenfoam{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: #bcd9ff;
+            border-radius: 10px;
+            margin: 13px 180px;
+            justify-content: center;
+            align-items: center;
+}
+
+#hiddenfoam input{
+    padding: 10px;
+    margin: 10px 30px;
+
+}
+#box{
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: rgb(3, 3, 3);
+    border: none;
+    box-shadow: #7b7b7b;
+
+}
+#uploadpost{
+ 
+       padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-family: sans-serif;
+      font-size: 16px;
+    
+}
+#editprofile{
+    
+       padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-family: sans-serif;
+      font-size: 16px;
+}
+
+#icon {
+  position: absolute;
+  bottom: 5px;   /* Move it a little above the bottom */
+  right: 5px;    /* Move it a little left from the right edge */
+  background: white;  /* Optional - to make it visible */
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#icon i {
+  font-size: 18px;
+  color: #333;
+}
+
+
+nav {
+  position: sticky;       /* Makes it stick */
+  top: 0;                 /* Sticks to top */
+  z-index: 1000;          /* Keeps it above other elements */
+ background-color: #1d1d1d;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+
+  margin-bottom: 20px;     /* Adds spacing under nav */
+
+}
+
+nav .logo h5 {
+  margin: 0;
+  padding: 0px 40px;
+  font-size: larger;
+  color: #f9f9f9;
+}
+
+nav .navLink {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav .navLink li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.lines {
+  display: none; /* For mobile toggle menu if needed */
+}
+
+/* Optional: Show lines only on small screens */
+@media (max-width: 768px) {
+  .navLink {
+    display: none; /* Hide menu links */
+  }
+  .lines {
+    display: block;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,142 @@
+/* ====== Post Detail Styling ====== */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  	background-color: #262626;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background: #b7bee3;
+  padding: 12px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #e60023; /* Pinterest red */
+}
+
+.post-detail {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.post-detail img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.post-detail p {
+  font-size: 16px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.post-detail p:nth-of-type(2) {
+  font-size: 14px;
+  color: #777;
+}
+
+.post-detail form {
+  display: inline-block;
+  margin: 12px 10px;
+}
+
+.post-detail button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Like button */
+.post-detail form:first-of-type button {
+  background: #ff4d6d;
+  color: white;
+}
+
+.post-detail form:first-of-type button:hover {
+  background: #e60023;
+  transform: scale(1.05);
+}
+
+/* Save button */
+.post-detail form:last-of-type button {
+  background: #3498db;
+  color: white;
+}
+
+.post-detail form:last-of-type button:hover {
+  background: #217dbb;
+  transform: scale(1.05);
+}
+
+nav {
+  position: sticky;       /* Makes it stick */
+  top: 0;                 /* Sticks to top */
+  z-index: 1000;          /* Keeps it above other elements */
+ background-color: #131313;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+
+  margin-bottom: 20px;     /* Adds spacing under nav */
+
+}
+
+nav .logo h5 {
+  margin: 0;
+  padding: 0px 40px;
+  font-size: larger;
+  color: #f9f9f9;
+}
+
+nav .navLink {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav .navLink li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.lines {
+  display: none; /* For mobile toggle menu if needed */
+}
+
+/* Optional: Show lines only on small screens */
+@media (max-width: 768px) {
+  .navLink {
+    display: none; /* Hide menu links */
+  }
+  .lines {
+    display: block;
+    cursor: pointer;
+  }
+}

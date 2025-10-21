@@ -1,0 +1,156 @@
+/* Reset some defaults */
+body, h1, p, form, input {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #bccdf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container to center content */
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Form content wrapper */
+.content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Profile image */
+#updateimg {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4f46e5;
+  margin-bottom: 15px;
+}
+
+/* Update photo button */
+#updatebtn {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+#updatebtn:hover {
+  background-color: #4338ca;
+}
+
+/* Input fields */
+.detail {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 6px rgba(79, 70, 229, 0.4);
+}
+
+/* Submit button */
+.btn.int {
+  background-color: #10b981;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.btn.int:hover {
+  background-color: #059669;
+}
+
+/* Responsive tweaks */
+@media (max-width: 500px) {
+  .container {
+    padding: 20px;
+  }
+
+  #updateimg {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+nav {
+  position: sticky;       /* Makes it stick */
+  top: 0;                 /* Sticks to top */
+  z-index: 1000;          /* Keeps it above other elements */
+ background-color: #131313;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+
+  margin-bottom: 20px;     /* Adds spacing under nav */
+
+}
+
+nav .logo h5 {
+  margin: 0;
+  padding: 0px 40px;
+  font-size: larger;
+  color: #f9f9f9;
+}
+
+nav .navLink {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav .navLink li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.lines {
+  display: none; /* For mobile toggle menu if needed */
+}
+
+/* Optional: Show lines only on small screens */
+@media (max-width: 768px) {
+  .navLink {
+    display: none; /* Hide menu links */
+  }
+  .lines {
+    display: block;
+    cursor: pointer;
+  }
+}

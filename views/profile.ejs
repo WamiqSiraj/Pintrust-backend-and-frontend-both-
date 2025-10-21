@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+   <nav>
+      <div class="logo">
+        <h5>LOGO</h5>
+		  
+      </div>
+      <ul class="navLink">
+        <li><a href="/feed">Feed</a></li>
+        <li><a href="/profile">Post Somthing</a></li>
+         <li><a href="/edit">Edit Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+	  <div class="lines">
+		  <div class="l1"></div>
+		  <div class="l2"></div>
+		  <div class="l3"></div>
+	  </div>
+    </nav>
+
+    <div class="profile-container">
+        <!-- Kapak Resmi -->
+        <div class="cover-photo">
+        
+          
+        </div>
+
+        <!-- Profil Resmi -->
+       <div class="profile-picture">
+  <img id="profileImage" 
+       src="<%= user.dp ? ('images/uploads/' + user.dp) : '/images/default.png' %>" 
+       alt="Profile img">
+</div>
+
+
+        <!-- Profil Bilgileri -->
+        <div class="profile-info">
+            <h1 id="fullname"><%=user.fullname%></h1>
+            <h4 id="bio">@<%=user.username%></h4>
+            <p id="bio"><%=user.bio%></p>
+             
+            <span>
+              <a id="uploadpost" href="/upload">Post Something</a>
+              <a id="editprofile" href="/edit">Edit Profile</a>
+            </span>
+        </div>
+   </div>
+
+   <div id="hiddenfoam">
+    <form hidden id="postfoam" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" value="Post Somthing" name="file">
+            <input id="box" type="text" placeholder="add caption" name="filetext">
+            <input id="box" type="submit">
+    </form>
+   </div>
+
+  
+    <div class="allcards">
+    <% user.posts.forEach(function(post){
+    %> 
+     <div class="card">
+
+  <img  src="/images/uploads/<%= post.image %>">
+  <div class="card-body">
+    <h5 class="card-title"><%=post.postText%></h5>
+    <a href="/delete/<%=post._id%>">Delete</a>
+  </div>
+</div>
+   <%
+    })%>
+    </div>
+    
+
+  <form hidden id="edit" action="/update" method="post" enctype="multipart/form-data">
+       <div class="profile-info">
+        
+            <input type="text" name="fullname" id="fullname" value="<%= user.fullname %>">
+            <input type="text" name="username" id="username" value="<%= user.username %>">
+            <input type="text" name="bio" id="bio" value="<%= user.bio %>">
+
+            <button type="submit">Submit</button>
+        </div>
+   </form>
+
+
+   
+    <script>
+      document.querySelector("#uploadpost").addEventListener("click",function(e){
+         e.preventDefault(); // prevent page jump
+           document.getElementById("hiddenfoam").style.display = "block";
+      document.getElementById("postfoam").style.display = "block";
+      })
+
+      
+    
+    </script>
+</body>
+</html>

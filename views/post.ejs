@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/post.css">
+</head>
+<body>
+    <nav>
+      <div class="logo">
+        <h5>LOGO</h5>
+		  
+      </div>
+      <ul class="navLink">
+        <li><a href="/feed">Feed</a></li>
+        <li><a href="/profile">Post Somthing</a></li>
+         <li><a href="/edit">Edit Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+	  <div class="lines">
+		  <div class="l1"></div>
+		  <div class="l2"></div>
+		  <div class="l3"></div>
+	  </div>
+    </nav>
+    
+    <div class="post-detail">
+  <img src="/images/uploads/<%= post.image %>" alt="post image">
+  <p><%= post.posttext %></p>
+  <p>Posted by: <%= post.user.username %></p>
+
+  <!-- Like -->
+ <form action="/post/<%= post._id %>/like" method="POST">
+  <button type="submit">
+    <% if (post.likes.some(id => id.toString() === user._id.toString())) { %>
+      💔 Unlike
+    <% } else { %>
+      ❤️ Like 
+    <% } %>
+    (<%= post.likes.length %>)
+  </button>
+</form>
+
+
+  <!-- Save -->
+  <form action="/post/<%= post._id %>/save" method="POST">
+    <button type="submit">
+      <% if (user.savedPosts && user.savedPosts.includes(post._id)) { %>
+        ❌ Unsave
+      <% } else { %>
+        💾 Save
+      <% } %>
+      (<%= user.savedPosts ? user.savedPosts.length : 0 %>)
+    </button>
+  </form>
+</div>
+
+    
+</body>
+</html>
+
+
+
+

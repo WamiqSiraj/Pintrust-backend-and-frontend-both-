@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='stylesheet' href='/stylesheets/edit.css' />
+</head>
+
+<body>
+   <nav>
+      <div class="logo">
+        <h5>LOGO</h5>
+		  
+      </div>
+      <ul class="navLink">
+        <li><a href="/feed">Feed</a></li>
+        <li><a href="/profile">Post Somthing</a></li>
+         <li><a href="/edit">Edit Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+	  <div class="lines">
+		  <div class="l1"></div>
+		  <div class="l2"></div>
+		  <div class="l3"></div>
+	  </div>
+    </nav>
+
+  <div class="container">
+    <div class="content">
+      <form action="/update" method="post" enctype="multipart/form-data">
+  <img id="updateimg" src="/images/uploads/<%= user.dp %>">
+  <input type="file" name="file" id="fileInput" style="display:none">
+
+  <input type="button" id="updatebtn" value="Update Profile Photo">
+  
+  <input type="text" placeholder="username" class="detail" name="username" value="<%=user.username%>" />
+  <input type="email" placeholder="Email" class="detail" name="email" value="<%=user.email%>" /><br />
+  <input type="text" placeholder="Full Name" class="detail" name="fullname" value="<%=user.fullname%>" />
+  <input type="text" placeholder="Bio" class="detail" name="bio" value="<%=user.bio%>" />
+  <input type="submit" value="Update" class="btn int">
+</form>
+
+    </div>
+  </div>
+      
+  <script>
+
+   document.querySelector("#updatebtn").addEventListener("click",function(){
+      document.querySelector("#fileInput").click();
+   })
+
+  </script>
+
+</body>
+
+</html>

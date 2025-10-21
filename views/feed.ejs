@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed page</title>
+    <link rel="stylesheet" href="/stylesheets/feed.css">
+</head>
+<body>
+     <nav>
+      <div class="logo">
+        <h5>LOGO</h5>
+		  
+      </div>
+      <ul class="navLink">
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/profile">Post Somthing</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+	  <div class="lines">
+		  <div class="l1"></div>
+		  <div class="l2"></div>
+		  <div class="l3"></div>
+	  </div>
+    </nav>
+
+<header>
+  <h1>Feed Page</h1>
+  <h2>Lorem ipsum doloptates veniamcc eygwegwe ad nam! Repuu u hh kj hdiandae!</h2>
+</header> 
+
+<div class="container">
+       <% posts.forEach(function(elem){
+       %>
+          <div class="box">
+
+                 <a href="/post/<%= elem._id %>">
+        <img src="/images/uploads/<%= elem.image %>" alt="post image">
+      </a>
+            <div class="caption"><%=elem.posttext%> </div>
+  </div> 
+       <%})
+        %>
+</div> 
+      
+
+      
+    	
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	  <script src="app.js"></script>
+</body>
+				  
+</html>
